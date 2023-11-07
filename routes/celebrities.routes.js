@@ -32,11 +32,11 @@ router.post("/create", async (req, res, next)=>{
 })
 
 // .GET "/celebrities" => mostrar lista celebrities creadas
-router.get("/celebrities", async (req, res, next)=>{
+router.get("/", async (req, res, next)=>{
     try{
         const response = await Celebrity.find()
-        res.render("celebrities.hbs",{
-            listCelebrities: response
+        res.render("celebrities/celebrities.hbs",{
+            allCelebrities: response
         })
     }
     catch(err){
