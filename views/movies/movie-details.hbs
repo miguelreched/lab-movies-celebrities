@@ -1,0 +1,30 @@
+<a href="/">Home</a>
+
+<div>
+
+<h2>Movie Details</h2>
+
+<p> Title: {{this.specificMovie.title}} </p>
+
+<br>
+
+<p> Genre: {{this.specificMovie.genre}} </p>
+
+<br>
+
+<p> Plot: {{this.specificMovie.plot}} </p>
+
+<br>
+
+{{#each this.specificMovie.cast}}
+ <p>{{this.name}}, {{this.occupation}} and {{this.catchPhrase}} </p>
+
+// NO SE ME MUESTRAN LOS ACTORES PERO CREO QUE ES PROBLEMA DE QUE SOLO PUEDO SELECCIONARLOS Y AL ACER CREATE O INTRO, NO SE ME GUARDAN. 
+
+{{/each}}
+
+<form action="/movies/{{this.specificMovie._id}}/delete" method="post">
+<button>Delete</button>
+</form>
+
+</div>
